@@ -9,7 +9,7 @@ export default function HomePage() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sidgtm._Abstract_Kerala_coffee_plantation_landscape_monochrom_875b7bb6-f589-4a13-ab2f-043593c81ef9_3-MYEC9FmSacpR1pTgUosCG9Hd9TbeSt.png')",
+            backgroundImage: "url('/images/hero-background.png')",
             backgroundPosition: "center right",
           }}
         ></div>
@@ -38,7 +38,7 @@ export default function HomePage() {
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-repeat"
                style={{
-                 backgroundImage: `url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/0_3-2owKsU5zWqjmpChWQA0cO9dusA9OXX.jpg')`,
+                 backgroundImage: `url('/images/coffee-leaf-pattern.jpg')`,
                  backgroundSize: '200px',
                }}
           ></div>
@@ -79,7 +79,7 @@ export default function HomePage() {
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-repeat"
                style={{
-                 backgroundImage: `url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/0_2-x0JXwX9BbvZC92d2GlFKRxlPCw65XH.jpg')`,
+                 backgroundImage: `url('/images/geometric-pattern.jpg')`,
                  backgroundSize: '300px',
                }}
           ></div>
