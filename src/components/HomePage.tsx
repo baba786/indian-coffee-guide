@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button"
 import { ChevronDown, Coffee, Leaf, MapPin } from "lucide-react"
 
 export default function HomePage() {
@@ -16,17 +15,9 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent"></div>
         <div className="relative z-10 text-white px-4 py-12 max-w-2xl mx-auto md:ml-8 lg:ml-16">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6">Indian Coffee Guide</h1>
-          <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12">
+          <p className="text-lg sm:text-xl md:text-2xl">
             Explore the rich flavors and traditions of Indian coffee, from the misty hills of Coorg to the aromatic plantations of Kerala.
           </p>
-          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-            <Button className="bg-white text-black hover:bg-gray-200 text-base sm:text-lg py-4 sm:py-6 px-6 sm:px-8 w-full sm:w-auto">
-              Discover Varieties
-            </Button>
-            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-black text-base sm:text-lg py-4 sm:py-6 px-6 sm:px-8 w-full sm:w-auto">
-              Brewing Guide
-            </Button>
-          </div>
         </div>
         <div className="absolute bottom-8 left-0 right-0 flex justify-center animate-bounce">
           <ChevronDown className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
