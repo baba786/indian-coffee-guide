@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChevronDown, Coffee, Leaf, MapPin, Clock, Droplet, ThermometerSun } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
+import { Card, CardContent, CardFooter } from "@/components/ui/card"
 
 export default function HomePage() {
   return (
@@ -60,7 +60,7 @@ export default function HomePage() {
       <section className="py-12 sm:py-20 relative overflow-hidden bg-[#F5F5F5] text-[#4A321F]">
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center">Brewing Guides</h2>
-          <p className="text-center mb-8 max-w-2xl mx-auto">Master the art of brewing perfect Indian coffee with these easy-to-follow guides. Whether you're using a Moka Pot, Aeropress, or traditional South Indian filter, we've got you covered.</p>
+          <p className="text-center mb-8 max-w-2xl mx-auto">Master the art of brewing perfect Indian coffee with these easy-to-follow guides. Whether you&apos;re using a Moka Pot, Aeropress, or traditional South Indian filter, we&apos;ve got you covered.</p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
