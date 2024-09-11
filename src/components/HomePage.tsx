@@ -15,14 +15,30 @@ export default function HomePage() {
             backgroundPosition: "center right",
           }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent"></div>
-        <div className="relative z-10 text-white px-4 py-12 max-w-2xl mx-auto md:ml-8 lg:ml-16">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6">Indian Coffee Guide</h1>
-          <p className="text-lg sm:text-xl md:text-2xl">
-            Explore the rich flavors and traditions of Indian coffee, from the misty hills of Coorg to the aromatic plantations of Kerala.
-          </p>
+        <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent md:opacity-60"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/70 to-black md:hidden"></div>
+        <div className="relative z-10 w-full h-full overflow-y-auto md:overflow-visible">
+          <div className="sticky top-0 pt-16 pb-8 px-4 text-white md:static md:pt-0 md:pb-0">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6">Indian Coffee Guide</h1>
+          </div>
+          <div className="px-4 pb-16 text-white md:hidden">
+            <p className="text-lg sm:text-xl mb-8">
+              Explore the rich flavors and traditions of Indian coffee, from the misty hills of Coorg to the aromatic plantations of Kerala.
+            </p>
+            <p className="text-base sm:text-lg mb-8">
+              India's coffee culture is as diverse as its landscapes. From the bold and spicy notes of robusta to the subtle and complex flavors of arabica, each cup tells a story of tradition, craftsmanship, and the unique terroir of its origin.
+            </p>
+            <p className="text-base sm:text-lg">
+              Scroll down to embark on a journey through India's coffee regions, discover traditional brewing methods, and learn about the farmers who bring this exquisite coffee to your cup.
+            </p>
+          </div>
+          <div className="hidden md:block relative z-10 text-white px-4 py-12 max-w-2xl mx-auto md:ml-8 lg:ml-16">
+            <p className="text-lg sm:text-xl md:text-2xl">
+              Explore the rich flavors and traditions of Indian coffee, from the misty hills of Coorg to the aromatic plantations of Kerala.
+            </p>
+          </div>
         </div>
-        <div className="absolute bottom-8 left-0 right-0 flex justify-center animate-bounce">
+        <div className="absolute bottom-8 left-0 right-0 justify-center hidden md:flex">
           <ChevronDown className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
         </div>
       </section>
