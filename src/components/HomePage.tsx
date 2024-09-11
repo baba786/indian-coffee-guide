@@ -58,18 +58,18 @@ const HomePage: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] md:min-h-screen flex items-center">
+      <section className="relative min-h-[50vh] sm:min-h-[70vh] md:min-h-screen flex items-center">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/images/hero-background.png')",
+            backgroundImage: "url('/placeholder.svg?height=1080&width=1920')",
             backgroundPosition: "center right",
           }}
         ></div>
         <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-70"></div>
-        <div className="relative z-10 text-white px-4 py-8 w-full max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Indian Coffee Guide</h1>
-          <p className="text-lg md:text-xl mb-6">
+        <div className="relative z-10 text-white px-4 py-8 w-full max-w-3xl mx-auto text-center md:text-left">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4">Indian Coffee Guide</h1>
+          <p className="text-base sm:text-lg md:text-xl mb-6">
             Discover the rich flavors of Indian coffee
           </p>
           <Button className="bg-[#8b593e] hover:bg-[#6d4631]">
@@ -82,10 +82,10 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-12 relative overflow-hidden bg-[#f5f5f5]">
+      <section className="py-8 md:py-12 relative overflow-hidden bg-[#f5f5f5]">
         <div className="container mx-auto px-4 relative z-10">
-          <h2 className="text-2xl md:text-4xl font-bold mb-8 text-center text-[#4a3728]">About Indian Coffee</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <h2 className="text-2xl md:text-4xl font-bold mb-8 text-center md:text-left text-[#4a3728]">About Indian Coffee</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {[
               { Icon: MapPin, title: "Origin", content: "Grown in the Southern states, mainly in the Western Ghats." },
               { Icon: Leaf, title: "Varieties", content: "Arabica and Robusta, each with unique flavors." },
@@ -103,10 +103,10 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Brewing Guide Section */}
-      <section className="py-12 bg-white">
+      <section className="py-8 md:py-12 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-4xl font-bold mb-8 text-center text-[#4a3728]">Brewing Guides</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <h2 className="text-2xl md:text-4xl font-bold mb-8 text-center md:text-left text-[#4a3728]">Brewing Guides</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {[
               {
                 name: "Moka Pot",
@@ -155,8 +155,8 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#4a3728] text-white py-6">
-        <div className="container mx-auto px-4 text-center text-sm">
+      <footer className="bg-[#4a3728] text-white py-4 md:py-6">
+        <div className="container mx-auto px-4 text-center md:text-left text-xs sm:text-sm">
           <p>&copy; 2023 Indian Coffee Guide. All rights reserved.</p>
         </div>
       </footer>
