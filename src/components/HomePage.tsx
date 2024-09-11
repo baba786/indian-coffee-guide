@@ -1,13 +1,64 @@
-import React from 'react';
-import { ChevronDown, Coffee, Leaf, MapPin, Clock, Droplet, ThermometerSun } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter } from "@/components/ui/card"
+import React, { ReactNode } from 'react';
 
-export default function HomePage() {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: ReactNode;
+  className?: string;
+}
+
+const Button: React.FC<ButtonProps> = ({ children, className = '', ...props }) => (
+  <button
+    className={`px-4 py-2 rounded font-semibold text-white ${className}`}
+    {...props}
+  >
+    {children}
+  </button>
+);
+
+interface CardProps {
+  children: ReactNode;
+  className?: string;
+}
+
+const Card: React.FC<CardProps> = ({ children, className = '', ...props }) => (
+  <div className={`bg-white rounded-lg shadow-md overflow-hidden ${className}`} {...props}>
+    {children}
+  </div>
+);
+
+const CardContent: React.FC<CardProps> = ({ children, className = '', ...props }) => (
+  <div className={`p-4 ${className}`} {...props}>
+    {children}
+  </div>
+);
+
+const CardFooter: React.FC<CardProps> = ({ children, className = '', ...props }) => (
+  <div className={`p-4 bg-gray-50 ${className}`} {...props}>
+    {children}
+  </div>
+);
+
+interface IconProps extends React.SVGProps<SVGSVGElement> {
+  d: string;
+}
+
+const Icon: React.FC<IconProps> = ({ d, className = '', ...props }) => (
+  <svg className={`w-5 h-5 ${className}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={d} />
+  </svg>
+);
+
+const ChevronDown: React.FC<React.SVGProps<SVGSVGElement>> = (props) => <Icon d="M19 9l-7 7-7-7" {...props} />;
+const Coffee: React.FC<React.SVGProps<SVGSVGElement>> = (props) => <Icon d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z" {...props} />;
+const Leaf: React.FC<React.SVGProps<SVGSVGElement>> = (props) => <Icon d="M3 21c3 0 7-1 7-8V5c3 3 5 6 5 8a7 7 0 11-7 7" {...props} />;
+const MapPin: React.FC<React.SVGProps<SVGSVGElement>> = (props) => <Icon d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" {...props} />;
+const Clock: React.FC<React.SVGProps<SVGSVGElement>> = (props) => <Icon d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" {...props} />;
+const Droplet: React.FC<React.SVGProps<SVGSVGElement>> = (props) => <Icon d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" {...props} />;
+
+const HomePage: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center">
+      <section className="relative min-h-[70vh] md:min-h-screen flex items-center">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -15,57 +66,36 @@ export default function HomePage() {
             backgroundPosition: "center right",
           }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent md:opacity-60"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/70 to-black md:hidden"></div>
-        <div className="relative z-10 w-full h-full overflow-y-auto md:overflow-visible">
-          <div className="sticky top-0 pt-16 pb-8 px-4 text-white md:static md:pt-0 md:pb-0">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6">Indian Coffee Guide</h1>
-          </div>
-          <div className="px-4 pb-16 text-white md:hidden">
-            <p className="text-lg sm:text-xl mb-8">
-              Explore the rich flavors and traditions of Indian coffee, from the misty hills of Coorg to the aromatic plantations of Kerala.
-            </p>
-            <p className="text-base sm:text-lg mb-8">
-            India&apos;s coffee culture is as diverse as its landscapes. From the bold and spicy notes of robusta to the subtle and complex flavors of arabica, each cup tells a story of tradition, craftsmanship, and the unique terroir of its origin.
-            </p>
-            <p className="text-base sm:text-lg">
-              Scroll down to embark on a journey through India&apos;s coffee regions, discover traditional brewing methods, and learn about the farmers who bring this exquisite coffee to your cup.
-            </p>
-          </div>
-          <div className="hidden md:block relative z-10 text-white px-4 py-12 max-w-2xl mx-auto md:ml-8 lg:ml-16">
-            <p className="text-lg sm:text-xl md:text-2xl">
-              Explore the rich flavors and traditions of Indian coffee, from the misty hills of Coorg to the aromatic plantations of Kerala.
-            </p>
-          </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-70"></div>
+        <div className="relative z-10 text-white px-4 py-8 w-full max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">Indian Coffee Guide</h1>
+          <p className="text-lg md:text-xl mb-6">
+            Discover the rich flavors of Indian coffee
+          </p>
+          <Button className="bg-[#8b593e] hover:bg-[#6d4631]">
+            Explore Guides
+          </Button>
         </div>
-        <div className="absolute bottom-8 left-0 right-0 justify-center hidden md:flex">
-          <ChevronDown className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+        <div className="absolute bottom-4 left-0 right-0 justify-center hidden md:flex">
+          <ChevronDown className="w-8 h-8 text-white animate-bounce" />
         </div>
       </section>
 
       {/* About Section */}
-      <section className="py-12 sm:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-repeat"
-               style={{
-                 backgroundImage: `url('/images/coffee-leaf-pattern.jpg')`,
-                 backgroundSize: '200px',
-               }}
-          ></div>
-        </div>
+      <section className="py-12 relative overflow-hidden bg-[#f5f5f5]">
         <div className="container mx-auto px-4 relative z-10">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center text-[#4a3728]">About Indian Coffee</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          <h2 className="text-2xl md:text-4xl font-bold mb-8 text-center text-[#4a3728]">About Indian Coffee</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { icon: MapPin, title: "Origin", content: "Indian coffee is grown in the southern states, primarily in the Western Ghats. The unique climate and altitude contribute to its distinct flavor profile." },
-              { icon: Leaf, title: "Varieties", content: "The two main varieties grown are Arabica and Robusta. Arabica is known for its smooth taste, while Robusta is stronger and often used in espresso blends." },
-              { icon: Coffee, title: "Flavor Profile", content: "Indian coffee is known for its full body, low acidity, and subtle spicy notes. It often has a hint of chocolate or nuts in its flavor profile." }
+              { Icon: MapPin, title: "Origin", content: "Grown in the Southern states, mainly in the Western Ghats." },
+              { Icon: Leaf, title: "Varieties", content: "Arabica and Robusta, each with unique flavors." },
+              { Icon: Coffee, title: "Flavor", content: "Full-bodied with subtle spicy and chocolatey notes." }
             ].map((item, index) => (
-              <div key={index} className="bg-white bg-opacity-90 rounded-lg p-4 sm:p-6 shadow-lg">
-                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 flex items-center text-[#8b593e]">
-                  <item.icon className="mr-2 w-5 h-5 sm:w-6 sm:h-6" /> {item.title}
+              <div key={index} className="bg-white rounded-lg p-4 shadow-md">
+                <h3 className="text-lg font-semibold mb-2 flex items-center text-[#8b593e]">
+                  <item.Icon className="mr-2 w-5 h-5" /> {item.title}
                 </h3>
-                <p className="text-sm sm:text-base">{item.content}</p>
+                <p className="text-sm">{item.content}</p>
               </div>
             ))}
           </div>
@@ -73,92 +103,49 @@ export default function HomePage() {
       </section>
 
       {/* Brewing Guide Section */}
-      <section className="py-12 sm:py-20 relative overflow-hidden bg-[#F5F5F5] text-[#4A321F]">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0 bg-repeat"
-               style={{
-                 backgroundImage: `url('/images/coffee-leaf-pattern.jpg')`,
-                 backgroundSize: '200px',
-               }}
-          ></div>
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center">Brewing Guides</h2>
-          <p className="text-center mb-8 max-w-2xl mx-auto">Master the art of brewing perfect Indian coffee with these easy-to-follow guides. Whether you&apos;re using a Moka Pot, Aeropress, or traditional South Indian filter, we&apos;ve got you covered.</p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-4xl font-bold mb-8 text-center text-[#4a3728]">Brewing Guides</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 name: "Moka Pot",
-                description: "Create rich, espresso-like coffee on your stovetop",
-                steps: [
-                  "Fill the bottom chamber with water up to the valve",
-                  "Insert the funnel and fill with ground coffee",
-                  "Screw on the upper chamber and place on medium heat",
-                  "Once the top is full of coffee, remove from heat and serve"
-                ],
-                time: "5-10 minutes",
-                grindSize: "Fine",
-                waterTemp: "Off boil"
+                description: "Rich, espresso-like coffee",
+                time: "5-10 min",
+                grind: "Fine"
               },
               {
                 name: "Aeropress",
-                description: "Quick and easy method for smooth, rich coffee",
-                steps: [
-                  "Place a filter in the cap and rinse with hot water",
-                  "Attach the cap to the chamber and place on a mug",
-                  "Add coffee grounds and hot water",
-                  "Stir, then press the plunger down slowly"
-                ],
-                time: "1-2 minutes",
-                grindSize: "Medium-fine",
-                waterTemp: "80°C"
+                description: "Quick, smooth coffee",
+                time: "1-2 min",
+                grind: "Medium-fine"
               },
               {
-                name: "South Indian Filter Coffee",
-                description: "Traditional method for strong, aromatic coffee",
-                steps: [
-                  "Add ground coffee to the upper chamber",
-                  "Gently tamp down the coffee",
-                  "Pour hot water and let it drip slowly",
-                  "Mix the decoction with hot milk and sugar to taste"
-                ],
-                time: "15-20 minutes",
-                grindSize: "Fine",
-                waterTemp: "95°C"
+                name: "South Indian Filter",
+                description: "Traditional strong coffee",
+                time: "15-20 min",
+                grind: "Fine"
               }
             ].map((method, i) => (
-              <Card key={i} className="overflow-hidden transition-shadow hover:shadow-lg">
-                <CardContent className="p-4">
-                  <h3 className="text-2xl font-semibold mb-2 flex items-center">
-                    <Coffee className="h-6 w-6 mr-2" />
+              <Card key={i}>
+                <CardContent>
+                  <h3 className="text-xl font-semibold mb-2 flex items-center">
+                    <Coffee className="h-5 w-5 mr-2" />
                     {method.name}
                   </h3>
                   <p className="text-sm text-gray-600 mb-4">{method.description}</p>
-                  <div className="space-y-2 mb-4">
-                    <div className="flex items-center">
-                      <Clock className="h-4 w-4 mr-2" />
-                      <span className="text-sm">Brew Time: {method.time}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Droplet className="h-4 w-4 mr-2" />
-                      <span className="text-sm">Grind Size: {method.grindSize}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <ThermometerSun className="h-4 w-4 mr-2" />
-                      <span className="text-sm">Water Temperature: {method.waterTemp}</span>
-                    </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="flex items-center">
+                      <Clock className="h-4 w-4 mr-1" /> {method.time}
+                    </span>
+                    <span className="flex items-center">
+                      <Droplet className="h-4 w-4 mr-1" /> {method.grind}
+                    </span>
                   </div>
-                  <h4 className="font-semibold mb-2">Brewing Steps:</h4>
-                  <ol className="list-decimal list-inside text-sm">
-                    {method.steps.map((step, index) => (
-                      <li key={index}>{step}</li>
-                    ))}
-                  </ol>
                 </CardContent>
-                <CardFooter className="p-4 bg-gray-50">
-                  <Button className="w-full bg-[#4A321F] hover:bg-[#2C1E13] text-white">
-                    View Detailed Guide
+                <CardFooter>
+                  <Button className="w-full bg-[#4A321F] hover:bg-[#2C1E13]">
+                    View Guide
                   </Button>
                 </CardFooter>
               </Card>
@@ -168,11 +155,13 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#4a3728] text-white py-6 sm:py-8">
-        <div className="container mx-auto px-4 text-center text-sm sm:text-base">
+      <footer className="bg-[#4a3728] text-white py-6">
+        <div className="container mx-auto px-4 text-center text-sm">
           <p>&copy; 2023 Indian Coffee Guide. All rights reserved.</p>
         </div>
       </footer>
     </div>
   )
 }
+
+export default HomePage;
