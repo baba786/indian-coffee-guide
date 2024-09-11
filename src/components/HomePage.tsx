@@ -58,6 +58,14 @@ export default function HomePage() {
 
       {/* Brewing Guide Section */}
       <section className="py-12 sm:py-20 relative overflow-hidden bg-[#F5F5F5] text-[#4A321F]">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0 bg-repeat"
+               style={{
+                 backgroundImage: `url('/images/coffee-leaf-pattern.jpg')`,
+                 backgroundSize: '200px',
+               }}
+          ></div>
+        </div>
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center">Brewing Guides</h2>
           <p className="text-center mb-8 max-w-2xl mx-auto">Master the art of brewing perfect Indian coffee with these easy-to-follow guides. Whether you&apos;re using a Moka Pot, Aeropress, or traditional South Indian filter, we&apos;ve got you covered.</p>
