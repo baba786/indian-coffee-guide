@@ -26,10 +26,10 @@ export default function HomePage() {
               Explore the rich flavors and traditions of Indian coffee, from the misty hills of Coorg to the aromatic plantations of Kerala.
             </p>
             <p className="text-base sm:text-lg mb-8">
-              India's coffee culture is as diverse as its landscapes. From the bold and spicy notes of robusta to the subtle and complex flavors of arabica, each cup tells a story of tradition, craftsmanship, and the unique terroir of its origin.
+            India&apos;s coffee culture is as diverse as its landscapes. From the bold and spicy notes of robusta to the subtle and complex flavors of arabica, each cup tells a story of tradition, craftsmanship, and the unique terroir of its origin.
             </p>
             <p className="text-base sm:text-lg">
-              Scroll down to embark on a journey through India's coffee regions, discover traditional brewing methods, and learn about the farmers who bring this exquisite coffee to your cup.
+              Scroll down to embark on a journey through India&apos;s coffee regions, discover traditional brewing methods, and learn about the farmers who bring this exquisite coffee to your cup.
             </p>
           </div>
           <div className="hidden md:block relative z-10 text-white px-4 py-12 max-w-2xl mx-auto md:ml-8 lg:ml-16">
